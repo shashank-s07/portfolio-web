@@ -1,7 +1,6 @@
 
   import React, { useState } from "react";
   import { Modal } from "react-bootstrap";
-  import "bootstrap/dist/css/bootstrap.css";
   import image from "../assest/free-stock-image-1.jpg"
   function RecommendationCards(props) {
     const { name, company, designation, message } = props.recommendation;

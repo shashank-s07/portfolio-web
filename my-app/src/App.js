@@ -8,7 +8,7 @@ import SkillSection from './component/SkillSection';
 import Title from './component/Title';
 import Contact from './component/Contact';
 import WriteRecommendation from './component/WriteRecommendation';
-import {BrowserRouter,Route,Switch} from "react-router-dom";
+import {BrowserRouter,Route,Routes} from "react-router-dom";
 import NotFound from './component/NotFound';
 import ProjectPage from './component/ProjectPage';
 import HomePage from './component/HomePage';
@@ -22,34 +22,34 @@ import ScrollToTop from './component/ScrollToTop';
 function App() {
   
   return(
+  <BrowserRouter>
     <Provider >
-          <BrowserRouter>
           <ScrollToTop />
         
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
          
   
-          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/contact" element={<Contact/>} />
     
   
-          <Route exact path="/write-a-recommendation" component={WriteRecommendation} />
+          <Route exact path="/write-a-recommendation" element={< WriteRecommendation />} />
 
-          <Route exact path="/allprojects" component={AllProjects} />
+          <Route exact path="/allprojects" element={<AllProjects />} />
   
-          <Route exact  path="/project/add" component={AddProject} />   
+          <Route exact  path="/project/add" element={<AddProject/>} />   
   
-          <Route exact path="/project/:id" component={ProjectPage} />
+          <Route exact path="/project/:id" element={<ProjectPage />} />
   
-          <Route component={NotFound} />
+          <Route element={< NotFound />}  />
      
-        </Switch>
+        </Routes>
          <Footer />
       
-      </BrowserRouter>
 
     </Provider>
+  </BrowserRouter>
 
 
 
